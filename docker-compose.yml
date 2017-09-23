@@ -1,7 +1,7 @@
 version: "3"
 services:
   php-ecosystem:
-     image: longguojin/php-ecosystem
+     build: ./data/php-ecosystem/
      restart: always
      ports:
        - "80:80" # web
@@ -39,5 +39,7 @@ services:
 
   kibana:
    image: kibana
+   links:
+     - elasticsearch
    ports:
     - 5601:5601
