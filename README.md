@@ -1,5 +1,5 @@
 # docker-php-ecosystem
-docker php develop environment, including php,php-fpm,nginx,elasticsearch,mysql,phpmyadmin, supervisord,redis, beanstalk. And has composer, gruntjs, gulp, bower...etc
+docker php develop environment, including php7,php-fpm,nginx,elasticsearch,mysql,phpmyadmin, supervisord,redis, beanstalk. And has composer, gruntjs, gulp, bower...etc
 
 # getting start
 
