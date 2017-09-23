@@ -6,7 +6,7 @@ docker php develop environment, including php,php-fpm,nginx,elasticsearch,mysql,
 1. clone this project
 
  ``` bash
- git clone https://github.com/longguojin/docker-php-ecosystem.git
+ git clone https://github.com/longguojin/docker-php-ecosystem.git myapp
 
 ```
 
@@ -14,6 +14,8 @@ docker php develop environment, including php,php-fpm,nginx,elasticsearch,mysql,
 
 3. run the docker-compose
  ``` bash
+ cd myapp
+ 
  docker-compose up
 
  ```
