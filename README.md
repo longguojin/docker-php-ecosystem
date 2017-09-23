@@ -1,7 +1,7 @@
 # docker-php-ecosystem
 docker php develop environment, including redis,nginx,mongo,elasticsearch,memecached,mysql,phpmyadmin
 
-#getting start
+# getting start
 
 1. clone this project
 
