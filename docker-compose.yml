@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  php-ecosystem:
+    image: longguojin/php-ecosystem
+    restart: always
+    ports:
+      - "80:80" # web
+    volumes:
+      - ./apps:/apps # all apps
+      - ./data/nginx/conf.d:/etc/nginx/sites-enabled #nginx conf
+      - ./data/php-ecosystem/.composer:/home/homestead/.composer # composer caching
+      - ./data/nginx/log:/var/log/nginx/ #nginx log
+
+ mysql:
+   image: mysql
+   volumes:
+     - mysql_data:/var/lib/mysql
+   restart: always
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: laravel
+     MYSQL_USER: root
+     MYSQL_PASSWORD: root
+
+ phpmyadmin:
+   depends_on:
+     - mysql
+   image: phpmyadmin/phpmyadmin
+   ports:
+     - "8080:80"
+   restart: always
+   environment:
+     PMA_HOST: mysql
+
+
+elasticsearch:
+ image: elasticsearch
+ volumes:
+  - ./data/elasticsearch:/usr/share/elasticsearch/data
+
+kibana:
+ image: kibana
+ ports:
+  - 5601:5601
